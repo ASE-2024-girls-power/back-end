@@ -1,5 +1,6 @@
 package project.controller;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import project.entity.User;
 import project.rest.dto.UserGetDTO;
 import project.rest.dto.UserPostDTO;
@@ -20,10 +21,9 @@ import java.util.List;
  */
 @RestController
 public class UserController {
-    private final UserService userService;
-    UserController(UserService userService) {
-        this.userService = userService;
-    }
+    @Autowired
+    UserService userService;
+    UserController() {}
 
     @GetMapping("/users")
     @ResponseStatus(HttpStatus.OK)

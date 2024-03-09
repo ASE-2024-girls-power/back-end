@@ -1,0 +1,26 @@
+package project.controller;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.*;
+import project.entity.Reader;
+import project.service.ReaderService;
+
+@RestController
+@RequestMapping("/api/readers")
+public class ReaderController {
+
+    @Autowired
+    private ReaderService readerService;
+
+    @PostMapping("/register")
+    public ResponseEntity<?> registerReader(@RequestBody Reader reader){
+        // Handle registration logic, return appropriate response
+        Reader savedReader = readerService.createReader(reader);
+        return ResponseEntity.ok(savedReader); // Simplified, consider security implications
+    }
+
+
+
+    // Add a login endpoint if you're not using Spring Security's built-in mechanisms
+}
