@@ -12,7 +12,7 @@ public class Writer implements Serializable {
     private int id;
 
     @Column(nullable = false, unique = true)
-    private String penname;
+    private String penName;
 
     @Column(nullable = false)
     private String password;
@@ -22,7 +22,4 @@ public class Writer implements Serializable {
 
     @Column
     private int pic;
-
-    @OneToMany
-    private List<Story> stories;
 }

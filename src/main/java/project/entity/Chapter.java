@@ -6,17 +6,26 @@ import java.util.List;
 @Entity
 @Table(name = "CHAPTER")
 public class Chapter implements Serializable {
-    @Id
-    @GeneratedValue
-    private int id;
 
-    @ManyToOne
-    @JoinColumn(name = "story_id")
-    private Story story;
+    @EmbeddedId
+    private ChapterID id;
 
     @Column(nullable = false, unique = true)
     private String title;
 
-    @OneToMany
-    private List<Paragraph> paragraphs;
+    public ChapterID getId() {
+        return id;
+    }
+
+    public void setId(ChapterID id) {
+        this.id = id;
+    }
+
+    public String getTitle() {
+        return title;
+    }
+
+    public void setTitle(String title) {
+        this.title = title;
+    }
 }
