@@ -5,7 +5,13 @@ import org.springframework.beans.factory.annotation.Autowired;
 import project.entity.Reader;
 import project.repository.ReaderRepository;
 
-
+/**
+ * Reader Service
+ * This class is the "worker" and responsible for all functionality related to
+ * the Reader
+ * (e.g., it creates, modifies, deletes, finds). The result will be passed back
+ * to the caller.
+ */
 
 
 
@@ -22,7 +28,7 @@ public class ReaderService {
         return readerRepository.save(reader);
     }
 
-    public Optional<Reader> findByEmail(String readerName){
+    public Optional<Reader> findByReaderName(String readerName){
         return readerRepository.findByReaderName(readerName);
     }
 }

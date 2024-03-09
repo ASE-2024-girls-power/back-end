@@ -6,6 +6,15 @@ import org.springframework.web.bind.annotation.*;
 import project.entity.Reader;
 import project.service.ReaderService;
 
+
+/**
+ * Reader Controller
+ * This class is responsible for handling all REST request that are related to
+ * the reader.
+ * The controller will receive the request and delegate the execution to the
+ * ReaderService and finally return the result.
+ */
+
 @RestController
 @RequestMapping("/api/readers")
 public class ReaderController {
